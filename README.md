@@ -196,17 +196,4 @@ http://localhost:5173
 
 ---
 
-# Future Improvements
-
-- Add more CIS checks
-- Authentication/Login
-- Docker deployment
-- Scheduled scanning
-- Multi-account AWS support
-- Charts & analytics
-
----
-
-# Author
-
 Developed as part of a Cloud Security Assignment.
