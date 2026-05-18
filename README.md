@@ -116,7 +116,7 @@ Example:
 ```properties
 aws.accessKey=YOUR_ACCESS_KEY
 aws.secretKey=YOUR_SECRET_KEY
-aws.region=ap-south-1
+aws.region=ap-east-1
 ```
 
 ---
