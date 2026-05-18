@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f7fb;
+    font-family: Arial, sans-serif;
+    color: #1f2937;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 30px 0;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+
+.section h2 {
+    margin-bottom: 8px;
+}
+
+.section p {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+/* COMMON BADGES */
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.success-bg {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.danger-bg {
+    background: #fee2e2;
+    color: #991b1b;
+}

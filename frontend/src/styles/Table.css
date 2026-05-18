@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+thead {
+    background: #e9eef7;
+}
+
+th {
+    text-align: left;
+    padding: 18px;
+    font-size: 15px;
+}
+
+td {
+    padding: 18px;
+    border-top: 1px solid #f0f0f0;
+}
+
+tr:hover {
+    background: #f9fafb;
+}
+
+@media(max-width: 700px) {
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
