@@ -87,8 +87,14 @@ The React dashboard displays:
 cloud-posture-scanner/
 │
 ├── backend/
+│   └── Dockerfile
 │
 ├── frontend/
+│   └── Dockerfile
+│
+├── docker-compose.yml
+|
+├── .env
 │
 └── README.md
 ```
@@ -105,11 +111,9 @@ cd backend
 
 ## 2. Configure AWS Credentials
 
-Add credentials in:
-
-```properties
-src/main/resources/application.properties
-```
+AWS credentials can be configured either using:
+- application.properties (local development)
+- .env file (Docker deployment)
 
 Example:
 
@@ -193,6 +197,98 @@ http://localhost:5173
 - Open SSH/RDP security groups
 - Missing MFA
 - CloudTrail disabled
+
+---
+
+# Docker Support
+
+The project is fully containerized using Docker.
+
+Both frontend and backend run inside separate Docker containers using Docker Compose.
+The application can also be run in a production-like environment using Docker Compose.
+
+---
+
+# Running with Docker
+
+## 1. Create `.env` file
+
+Create a `.env` file in the project root:
+
+```env
+AWS_ACCESS_KEY=YOUR_ACCESS_KEY
+AWS_SECRET_KEY=YOUR_SECRET_KEY
+AWS_REGION=YOUR_REGION
+```
+
+---
+
+## 2. Build and Run Containers
+
+```bash
+docker-compose up --build
+```
+
+---
+
+# Services
+
+| Service | Port |
+|---|---|
+| Frontend | 5173 |
+| Backend | 8080 |
+
+---
+
+# Access Application
+
+## Frontend
+
+```bash
+http://localhost:5173
+```
+
+## Backend
+
+```bash
+http://localhost:8080
+```
+
+---
+
+# Dockerized Architecture
+
+```text
+React Frontend Container
+            ↓
+Spring Boot Backend Container
+            ↓
+AWS SDK
+            ↓
+AWS Services (EC2, S3, DynamoDB)
+```
+
+---
+
+# Production Ready Features
+
+- Dockerized frontend and backend
+- Environment variable based AWS configuration
+- Secure credential handling
+- Modular backend architecture
+- REST API based communication
+- Scalable deployment support
+
+---
+
+# Design Decisions
+
+- Spring Boot used for scalable REST API development
+- React used for responsive dashboard UI
+- AWS SDK v2 used for AWS resource discovery
+- DynamoDB used for secure storage of scan findings
+- Docker used for containerized deployment
+- Modular service-based architecture used for maintainability and scalability
 
 ---
 
